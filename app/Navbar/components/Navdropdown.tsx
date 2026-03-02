@@ -25,7 +25,7 @@ export function NavDropdown({ link }: NavDropdownProps) {
       }}
     >
       {/* Trigger */}
-      <button className="flex items-center gap-1.5 text-[15px] font-medium text-[#3d2b1f] hover:text-[#c4872a] transition-colors duration-200 py-2">
+      <button className="flex items-center gap-1.5 text-lg font-medium text-[#3d2b1f] hover:text-[#c4872a] transition-colors duration-200 py-2">
         {link.label}
         <FontAwesomeIcon
           icon={open ? faChevronUp : faChevronDown}
@@ -46,7 +46,7 @@ export function NavDropdown({ link }: NavDropdownProps) {
                 href={sub.href}
                 onMouseEnter={() => setHoveredSub(sub.label)}
                 onMouseLeave={() => setHoveredSub(null)}
-                className={`flex items-center justify-between px-5 py-3 text-[14px] text-[#3d2b1f] transition-all duration-150 ${
+                className={`flex items-center justify-between px-5 py-3 text-base text-[#3d2b1f] transition-all duration-150 ${
                   hoveredSub === sub.label
                     ? "bg-[#f5e4d7] font-medium"
                     : "hover:bg-[#fdf1e8]"

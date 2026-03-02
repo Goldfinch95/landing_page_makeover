@@ -31,7 +31,7 @@ export function AnuncioBar() {
               onMouseLeave={() => setPausado(false)}
               className="
                 inline-flex items-center px-5 py-1.5
-                bg-[#F2D5C0] text-[#4A2C1A] text-sm rounded-full
+                bg-[#F2D5C0] text-[#4A2C1A] text-base lg:text-2xl rounded-full
                 whitespace-nowrap cursor-default
               "
             >

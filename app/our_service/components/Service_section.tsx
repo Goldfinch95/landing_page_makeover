@@ -11,7 +11,7 @@ export function ServiceSection() {
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#1C0F0A] leading-tight mb-4">
             Explorá nuestra amplia gama de servicios y soluciones profesionales
           </h2>
-          <p className="text-[#4A2C1A]/70 text-base leading-relaxed">
+          <p className="text-[#4A2C1A]/70 text-lg leading-relaxed">
             ¡Celebrá el lanzamiento de nuestra nueva web con una oferta exclusiva!
             Obtené un 10% de descuento en todos nuestros servicios profesionales,
             incluyendo consultas, paquetes premium y soluciones especializadas.
@@ -41,10 +41,10 @@ export function ServiceSection() {
 
               {/* Text */}
               <div className="p-5">
-                <h3 className="font-serif text-lg font-bold text-[#1C0F0A] mb-2">
+                <h3 className="font-serif text-2xl font-bold text-[#1C0F0A] mb-2">
                   {servicio.titulo}
                 </h3>
-                <p className="text-[#4A2C1A]/70 text-sm leading-relaxed">
+                <p className="text-[#4A2C1A]/70 text-base leading-relaxed">
                   {servicio.descripcion}
                 </p>
               </div>

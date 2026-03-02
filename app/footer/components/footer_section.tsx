@@ -1,4 +1,4 @@
-// src/features/footer/components/Footer.tsx
+// app/footer/components/footer_section.tsx
 "use client";
 
 import Link from "next/link";
@@ -14,7 +14,6 @@ export function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    // Wrapper relativo para poder posicionar el botón entre footer y copyright bar
     <div className="relative">
       <footer className="bg-[#1C0A06] text-white/70 pt-16 pb-8 px-6">
         <div className="max-w-6xl mx-auto">
@@ -22,7 +21,7 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-16">
             {columnas.map((col) => (
               <div key={col.titulo}>
-                <h4 className="text-[#B5622A] text-xs font-semibold tracking-widest uppercase mb-5">
+                <h4 className="text-[#B5622A] text-xl font-semibold tracking-widest uppercase mb-5">
                   {col.titulo}
                 </h4>
                 <ul className="flex flex-col gap-3">
@@ -30,7 +29,7 @@ export function Footer() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-sm text-white/70 hover:text-[#B5622A] transition-colors duration-200"
+                        className="text-lg lg:text-base text-white/70 hover:text-[#B5622A] transition-colors duration-200"
                       >
                         {link.label}
                       </Link>
@@ -42,7 +41,7 @@ export function Footer() {
 
             {/* Seguinos */}
             <div>
-              <h4 className="text-[#B5622A] text-xs font-semibold tracking-widest uppercase mb-5">
+              <h4 className="text-[#B5622A] text-xl font-semibold tracking-widest uppercase mb-5">
                 Seguinos
               </h4>
               <div className="flex gap-4 mb-8">
@@ -53,20 +52,20 @@ export function Footer() {
                     aria-label={red.label}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center transition-transform duration-200 hover:scale-110"
+                    className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center transition-transform duration-200 hover:scale-110"
                   >
-                    <FontAwesomeIcon icon={red.icon} className="text-white text-base" />
+                    <FontAwesomeIcon icon={red.icon} className="text-white text-xl " />
                   </Link>
                 ))}
               </div>
               <div className="flex flex-col gap-4">
                 <div className="flex items-start gap-3">
-                  <FontAwesomeIcon icon={faLocationDot} className="text-[#B5622A] text-base mt-0.5 shrink-0" />
-                  <span className="text-sm leading-relaxed">{contacto.direccion}</span>
+                  <FontAwesomeIcon icon={faLocationDot} className="text-[#B5622A] text-lg mt-0.5 shrink-0" />
+                  <span className="text-lg leading-relaxed">{contacto.direccion}</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <FontAwesomeIcon icon={faPhoneVolume} className="text-[#B5622A] text-base shrink-0" />
-                  <span className="text-sm">{contacto.telefono}</span>
+                  <FontAwesomeIcon icon={faPhoneVolume} className="text-[#B5622A] text-lg shrink-0" />
+                  <span className="text-lg">{contacto.telefono}</span>
                 </div>
               </div>
             </div>
@@ -86,10 +85,10 @@ export function Footer() {
                   <span className="text-[9px] uppercase tracking-[0.18em] text-[#a0826a] font-medium">Maquillaje Argentino</span>
                 </div>
               </Link>
-              <Link href="/privacidad" className="text-xs text-white/50 hover:text-[#B5622A] transition-colors duration-200">
+              <Link href="/privacidad" className="text-base lg:text-lg text-white/50 hover:text-[#B5622A] transition-colors duration-200">
                 Política de Privacidad
               </Link>
-              <Link href="/terminos" className="text-xs text-white/50 hover:text-[#B5622A] transition-colors duration-200">
+              <Link href="/terminos" className="text-base  lg:text-lg text-white/50 hover:text-[#B5622A] transition-colors duration-200">
                 Términos y Condiciones
               </Link>
             </div>
@@ -98,11 +97,8 @@ export function Footer() {
       </footer>
 
       {/* Copyright bar */}
-      <div
-        className="flex bg-white justify-center px-5 py-5 sm:px-10 lg:px-20"
-        
-      >
-        <p className="text-base text-black text-center m-0" style={{  fontFamily: "Arial, Helvetica, sans-serif" }}>
+      <div className="flex bg-white justify-center px-5 py-5 sm:px-10 lg:px-20">
+        <p className="text-base  lg:text-lg  text-black text-center m-0" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
           Desarrollado con <span style={{ color: "#B5622A" }}>&hearts;</span> por el equipo de{" "}
           <a
             href="https://undevcode.com/"
@@ -114,16 +110,16 @@ export function Footer() {
         </p>
       </div>
 
-      {/* Back to top — posicionado en el wrapper, justo en la unión */}
+      {/* Back to top — hidden on mobile, visible on md+ */}
       <button
         onClick={scrollToTop}
         className="
+          hidden md:flex
           group absolute bottom-[40px] right-95 z-10
-          flex items-center gap-2
+          items-center gap-2
           bg-white text-[#1C0A06] text-base font-medium
           px-5 py-3
-           border-[#ffffff] rounded-t-lg pb-5
-          
+          border-[#ffffff] rounded-t-lg pb-5
         "
       >
         <span className="transition-all duration-300 group-hover:-translate-y-2 group-hover:opacity-0">
